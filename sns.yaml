@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  MyTopic:
+    Properties:
+      TopicName: my-topic-1627819982
+    Type: AWS::SNS::Topic
+  MyTopicSubscription:
+    Properties:
+      Endpoint: some.email@example.com
+      Protocol: email
+      TopicArn:
+        Ref: MyTopic
+    Type: AWS::SNS::Subscription
+
